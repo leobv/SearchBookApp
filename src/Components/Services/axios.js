@@ -1,20 +1,9 @@
 import axios from "axios"
-import {useEffect} from 'react'
-const url = 'https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=Pg4mzg0kWJInVRAdus7BIxEIIcaK3jRD';
+import {useState, useEffect} from 'react'
 
 const FetchUrl = () => {
 
     
-
-    useEffect(() => {
-      
-    const fetchBooks = async () => {
-        const res = await axios.get(url) 
-        console.log(res.data.results.books[0])
-    }
-      
-      fetchBooks()
-    }, [])
     
     
   return (
