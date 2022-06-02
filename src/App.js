@@ -9,17 +9,17 @@ import Layout from './Components/Layout'
 
 
 
+
 function App() {
 
   
   return (
     <div className="App">
-      <h1>My Reads</h1>
             <Routes>
                 <Route exact path="/" element={<Layout />}> 
                         <Route index element={<Home />} /> 
                         <Route path="Bookshelf" element={<BookShelf />} />
-                        <Route path="Search" element={<Search />} />  
+                        <Route path="Search" element={<Search />} />
                 </Route> 
             </Routes>
     </div>

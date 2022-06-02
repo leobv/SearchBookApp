@@ -1,4 +1,4 @@
-import axios from 'axios'
+
 
 const api = "https://reactnd-books-api.udacity.com"
 
@@ -13,10 +13,11 @@ const headers = {
   'Authorization': token
 }
 
-export const get = async (bookId) =>
+export const get = (bookId) =>
   fetch(`${api}/books/${bookId}`, { headers })
     .then(res => res.json())
     .then(data => data.book)
+    
 
 // export const getAll = async () => {
 //   try {const res = await axios(`${api}/books`, { headers });
@@ -26,13 +27,14 @@ export const get = async (bookId) =>
 //   return error;
 // }
 // }
-export const getAll = () =>
-  fetch(`${api}/books`, { headers })
+export const getAll = async () =>
+ await fetch(`${api}/books`, { headers })
     .then(res => res.json())
     .then(data => data.books)
 
-export const update = (book, shelf) =>
-  axios(`${api}/books/${book.id}`, {
+
+export const update =  async (book, shelf) =>
+  await fetch(`${api}/books/${book.id}`, {
     method: 'PUT',
     headers: {
       ...headers,
@@ -40,9 +42,10 @@ export const update = (book, shelf) =>
     },
     body: JSON.stringify({ shelf })
   }).then(res => res.json())
+  
 
 export const search = (query) =>
-  axios(`${api}/search`, {
+  fetch(`${api}/search`, {
     method: 'POST',
     headers: {
       ...headers,
@@ -51,3 +54,5 @@ export const search = (query) =>
     body: JSON.stringify({ query })
   }).then(res => res.json())
     .then(data => data.books)
+    
+  

@@ -1,9 +1,33 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
+import ReadingBooks from '../Views/ReadingBooks'
 import Book from './Book'
 
+
+
+
 const BookShelf = () => {
+  
+  
+
+  // useEffect(() => {
+ useEffect(() => {
+  
+ 
+   
+ }, [])
+ 
+
+    
+  // }, [])
+  
+
   return (
-    <div><Book /></div>
+    <div>
+      
+      <div>
+        <Book  />
+      </div>
+      </div>
   )
 }
 
